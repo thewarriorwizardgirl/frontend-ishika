@@ -175,6 +175,11 @@
   font-size: 11px;
 }
 
+.experience-content {
+  min-width: 0;
+  grid-column: 2;
+}
+
 .timeline-section,
 .education-section {
   min-width: 0;
@@ -252,7 +257,6 @@
   padding-bottom: 8px;
 }
 
-.timeline-content h3,
 .education-entry h3 {
   margin: 0;
   color: #292927;
@@ -262,17 +266,116 @@
   line-height: 1.35;
 }
 
+.timeline-content details {
+  min-width: 0;
+}
+
+.timeline-summary {
+  display: flex;
+  min-height: 54px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.timeline-summary::-webkit-details-marker {
+  display: none;
+}
+
+.timeline-summary-title {
+  display: block;
+  min-width: 0;
+}
+
+.timeline-company {
+  display: block;
+  color: #292927;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 1.35;
+}
+
 .timeline-role {
+  display: block;
   margin-top: 5px;
   color: #777774;
   font-size: 13px;
   line-height: 1.6;
 }
 
+.expand-hint {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  padding-top: 5px;
+  color: #777774;
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.expand-icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #a5a5a1;
+  border-radius: 50%;
+}
+
+.expand-icon::before,
+.expand-icon::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 1px;
+  background: #666663;
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.expand-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.expand-hint-open {
+  display: none;
+}
+
+.timeline-content details[open] .expand-hint-closed {
+  display: none;
+}
+
+.timeline-content details[open] .expand-hint-open {
+  display: inline;
+}
+
+.timeline-content details[open] .expand-icon::after {
+  display: none;
+}
+
+.timeline-entry:hover .expand-hint,
+.timeline-summary:focus-visible .expand-hint {
+  opacity: 1;
+}
+
+.timeline-summary:focus-visible {
+  outline: 1px solid #777774;
+  outline-offset: 6px;
+}
+
+.timeline-details {
+  padding-top: 6px;
+}
+
 .highlight-groups {
   display: grid;
   gap: 24px;
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .highlight-group h4 {
@@ -312,8 +415,7 @@
 }
 
 .education-section {
-  grid-column: 2;
-  margin-top: 18px;
+  margin-top: 48px;
 }
 
 .education-timeline {
@@ -626,6 +728,22 @@
 
   .timeline-date {
     padding-left: 1px;
+  }
+
+  .timeline-summary {
+    min-height: 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .expand-hint {
+    padding-top: 0;
+    opacity: 1;
+  }
+
+  .timeline-details {
+    padding-top: 8px;
   }
 
   .highlight-groups {

@@ -151,60 +151,75 @@ function ExperiencePage() {
         </div>
       </div>
 
-      <div className="timeline-section">
-        <div className="timeline-heading">
-          <h2>Experience</h2>
-          <span>2016 — Now</span>
-        </div>
-        <ol className="experience-timeline">
-          {experience.map((entry) => (
-            <li className="timeline-entry" key={entry.company}>
-              <div className="timeline-date">{entry.period}</div>
-              <article className="timeline-content">
-                <h3>{entry.company}</h3>
-                <p className="timeline-role">{entry.role}</p>
-                <div className="highlight-groups">
-                  {entry.highlights.map((group) => (
-                    <section
-                      className="highlight-group"
-                      key={group.title}
-                      aria-label={group.title}
-                    >
-                      <h4>{group.title}</h4>
-                      <ul>
-                        {group.points.map((point) => (
-                          <li key={point}>{point}</li>
+      <div className="experience-content">
+        <div className="timeline-section">
+          <div className="timeline-heading">
+            <h2>Experience</h2>
+            <span>2016 — Now</span>
+          </div>
+          <ol className="experience-timeline">
+            {experience.map((entry) => (
+              <li className="timeline-entry" key={entry.company}>
+                <div className="timeline-date">{entry.period}</div>
+                <article className="timeline-content">
+                  <details>
+                    <summary className="timeline-summary">
+                      <span className="timeline-summary-title">
+                        <span className="timeline-company">{entry.company}</span>
+                        <span className="timeline-role">{entry.role}</span>
+                      </span>
+                      <span className="expand-hint">
+                        <span className="expand-icon" aria-hidden="true" />
+                        <span className="expand-hint-closed">Expand to see full</span>
+                        <span className="expand-hint-open">Collapse details</span>
+                      </span>
+                    </summary>
+                    <div className="timeline-details">
+                      <div className="highlight-groups">
+                        {entry.highlights.map((group) => (
+                          <section
+                            className="highlight-group"
+                            key={group.title}
+                            aria-label={group.title}
+                          >
+                            <h4>{group.title}</h4>
+                            <ul>
+                              {group.points.map((point) => (
+                                <li key={point}>{point}</li>
+                              ))}
+                            </ul>
+                          </section>
                         ))}
-                      </ul>
-                    </section>
-                  ))}
-                </div>
-                <p className="recognition">
-                  <span className="eyebrow">RECOGNITION</span>
-                  {entry.recognition}
-                </p>
-              </article>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      <section className="education-section" aria-labelledby="education-title">
-        <div className="timeline-heading">
-          <h2 id="education-title">Education</h2>
+                      </div>
+                      <p className="recognition">
+                        <span className="eyebrow">RECOGNITION</span>
+                        {entry.recognition}
+                      </p>
+                    </div>
+                  </details>
+                </article>
+              </li>
+            ))}
+          </ol>
         </div>
-        <ol className="education-timeline">
-          {education.map((item) => (
-            <li className="education-entry" key={item.school}>
-              <span className="education-date">{item.period}</span>
-              <div>
-                <h3>{item.school}</h3>
-                <p>{item.qualification}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
+
+        <section className="education-section" aria-labelledby="education-title">
+          <div className="timeline-heading">
+            <h2 id="education-title">Education</h2>
+          </div>
+          <ol className="education-timeline">
+            {education.map((item) => (
+              <li className="education-entry" key={item.school}>
+                <span className="education-date">{item.period}</span>
+                <div>
+                  <h3>{item.school}</h3>
+                  <p>{item.qualification}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
     </section>
   )
 }
