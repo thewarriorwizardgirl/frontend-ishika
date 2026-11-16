@@ -553,12 +553,16 @@
   }
 
   .site-nav {
-    justify-content: flex-start;
-    gap: 4px 18px;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: clamp(6px, 2vw, 14px);
   }
 
   .nav-link {
-    font-size: 12px;
+    flex: 0 0 auto;
+    font-size: clamp(10px, 2.8vw, 12px);
+    white-space: nowrap;
   }
 
   .landing-page {
