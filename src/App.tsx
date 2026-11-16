@@ -122,7 +122,7 @@ function HomePage() {
         <img
           alt="Ishika"
           className="portrait"
-          src="/ishika-photo.jpg"
+          src={`${import.meta.env.BASE_URL}ishika-photo.jpg`}
         />
       </figure>
     </section>
@@ -220,7 +220,7 @@ function ArtsPage() {
       <figure className="arts-coming-soon">
         <img
           alt="A minimalist grayscale illustration reading coming soon"
-          src="/arts-coming-soon.svg"
+          src={`${import.meta.env.BASE_URL}arts-coming-soon.svg`}
         />
         <figcaption>
           <p className="eyebrow">IN THE WORKS</p>
