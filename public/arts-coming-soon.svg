@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" fill="none">
+  <rect width="920" height="420" fill="#efefed"/>
+  <path d="M0 338c161-34 268-24 423 6 172 34 306 23 497-15v91H0v-82Z" fill="#e3e3e0"/>
+  <rect x="174" y="58" width="572" height="276" rx="2" fill="#d4d4d0"/>
+  <rect x="187" y="70" width="546" height="252" fill="#f7f7f6"/>
+  <circle cx="602" cy="154" r="52" fill="#dededb"/>
+  <path d="M187 278 332 152l125 119 95-83 181 134H187v-44Z" fill="#c6c6c2"/>
+  <path d="m187 293 174-103 119 107 88-65 165 80H187v-19Z" fill="#b5b5b1"/>
+  <path d="M325 334h270l33 70H292l33-70Z" fill="#a5a5a1"/>
+  <path d="M420 334h80l9 70h-98l9-70Z" fill="#92928e"/>
+  <text x="460" y="255" fill="#454543" font-family="Roboto, Arial, sans-serif" font-size="27" font-weight="500" letter-spacing="7" text-anchor="middle">COMING SOON</text>
+</svg>
